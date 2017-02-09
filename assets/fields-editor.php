@@ -121,12 +121,13 @@ class FWCFE_Resources_Loader {
         $arrayCategories=array();
 
         for ($index = 0; $index < count($categories); $index++) {
-            $category = $categories[$index];
-            $localCategory=  array();
-            $localCategory["id"]=$category->term_id;
-            $localCategory["title"]=$category->name;
-            array_push($arrayCategories,$localCategory);
-
+            if (isset($categories[$index])) {
+              $category = $categories[$index];
+              $localCategory=  array();
+              $localCategory["id"]=$category->term_id;
+              $localCategory["title"]=$category->name;
+              array_push($arrayCategories,$localCategory);
+            }
         }
         $strCategories = json_encode($arrayCategories);
         return $strCategories;
