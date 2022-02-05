@@ -1,0 +1,2 @@
+change line 337 to:
+    static function override_checkout_fields($standartFields) {
